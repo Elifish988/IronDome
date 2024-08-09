@@ -1,5 +1,6 @@
 ﻿using attackServer;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace attackServer
     internal class Program
     {
         
-        static async Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             //string filePathToString = "D:\\kodcode\\IronDome\\JasonMissiles.json";
             //string content = await AttackMeneger.ReadFileAsync(filePathToString);
@@ -26,7 +27,6 @@ namespace attackServer
             //{
             //    Console.WriteLine($"Name: {missile.name}");
             //}
-            
             WebSocketServer wss = new WebSocketServer("ws://localhost:3108");
             wss.AddWebSocketService<MissileHandler>("/MissileHandler", () => new MissileHandler(wss));
             wss.Start();

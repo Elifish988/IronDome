@@ -78,6 +78,7 @@
     <Compile Include="Department.cs" />
     <Compile Include="HonorQueue.cs" />
     <Compile Include="IronDome.cs" />
+    <Compile Include="IronDomeMeneger.cs" />
     <Compile Include="Missile.cs" />
     <Compile Include="MissileHandler.cs" />
     <Compile Include="Program.cs" />

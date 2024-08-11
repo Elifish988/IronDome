@@ -1,29 +1,21 @@
-﻿using System;
+﻿using attackServer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace attackServer
 {
-
-    internal class IronDome: Queue<Missile>
+    internal class IronDome
     {
-        public IronDome() { }
-        static IronDome missiles = new IronDome();
-        public void Enqueue(Missile missile)
+        public async void Interception(Missile missile)
         {
-            base.Enqueue(missile);
-        }
-
-
-        // בדיקה
-        public void  Peek()
-        {
-            Missile a = base.Peek();
-            Console.WriteLine(a.name);
-            
+            await Task.Delay(10000);
+            var random = new Random();
+            var list = new List<string> { $"The missile {missile.name} will be intercepted successfully", $"Missile {missile.name} intercept failed" };
+            int index = random.Next(list.Count);
+            Console.WriteLine(list[index]);
         }
 
     }

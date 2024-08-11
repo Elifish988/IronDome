@@ -16,8 +16,9 @@ namespace attackServer
 {
     internal class Program
     {
+
         
-        public static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             //string filePathToString = "D:\\kodcode\\IronDome\\JasonMissiles.json";
             //string content = await AttackMeneger.ReadFileAsync(filePathToString);
@@ -33,6 +34,7 @@ namespace attackServer
             Console.WriteLine("Backend server is running. Press Enter to exit...");
             Console.ReadLine();
             wss.Stop();
+            
 
         }
 

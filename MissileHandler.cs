@@ -14,7 +14,8 @@ using WebSocketSharp.Server;
         {
         //יצירת תור של טילים
         //public static Queue<Missile> missiles = new Queue<Missile>();
-        IronDome ironDome = new IronDome();
+        IronDomeMeneger ironDomeMeneger = new IronDomeMeneger();
+
 
         private readonly WebSocketServer _wss;
             public MissileHandler(WebSocketServer wss)
@@ -26,7 +27,9 @@ using WebSocketSharp.Server;
         protected override void OnMessage(MessageEventArgs e)
             {
             Missile missile = JsonSerializer.Deserialize<Missile>(e.Data);
-            ironDome.Enqueue(missile);
+            ironDomeMeneger.Enqueue(missile);
+         
+
 
             //missiles.Enqueue(missile);
 
@@ -39,8 +42,10 @@ using WebSocketSharp.Server;
             Console.WriteLine("data got is: " + e.Data);
 
             //בדיקת הכנסה למחסנית
-            ironDome.Peek();
+            ironDomeMeneger.Peek();
         }
+
+
 
 
         
